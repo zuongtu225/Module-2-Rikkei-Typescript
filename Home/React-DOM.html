@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+
+    <title>ReactDOM</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root-2"></div>
+    <div id="anlac"></div>
+    <script>
+      //DOM
+      const h2DOM = document.createElement("h2");
+
+      h2DOM.title = "title h2";
+      h2DOM.className = "class-h2";
+
+      h2DOM.innerText = "Print h2";
+
+      const root = document.getElementById("root");
+      root.appendChild(h2DOM);
+
+      //React -> React-DOM
+
+      //React.createElement (type, props, children) | (tạo 1 thẻ react) |
+
+      //type :có thể là một chuỗi (string) hoặc một function component (ví dụ: "div", "span", "h1",...).
+      //props :nó là một đối tượng chứa các thuộc tính (props) của React element mà bạn muốn tạo.
+      //children :đại diện cho nội dung bên trong React element. children cũng là prop.
+
+      const h1React = React.createElement(
+        "h1",
+        {
+          title: "anlac",
+          className: "class-h1",
+        },
+        "An lạc container"
+      );
+      const anlac = document.getElementById("anlac");
+      ReactDOM.render(h1React, anlac);
+
+      // 2. Tạo thẻ <ul>
+
+      //width DOM
+      const ulDOM = document.createElement("ul");
+      ulDOM.id = "ul-id";
+      ulDOM.style = "color: red";
+
+      const liDOM1 = document.createElement("li");
+      liDOM1.innerText = "Javascript";
+      liDOM1.id = "li-id-1";
+
+      const liDOM2 = document.createElement("li");
+      liDOM2.innerText = "ReactJS";
+
+      ulDOM.appendChild(liDOM1);
+      ulDOM.appendChild(liDOM2);
+      root.appendChild(ulDOM);
+
+      // width REACT
+      const ulReact = React.createElement(
+        "ul",
+        { id: "ul-id", style: "color: red" }, // null,
+        React.createElement("li", { id: "li-id-1" }, "Javascript"), // null mean that ko có gì
+        React.createElement("li", null, "ReactJS") //children cũng là prop
+      );
+      console.log("ulReact", ulReact);
+
+      //REACT-DOM
+      const divReact = React.createElement(
+        "div",
+        { className: "post-item" },
+        React.createElement(
+          "h2",
+          { title: "Học React tại F8" },
+          "HỌC REACT JS "
+        ),
+        React.createElement("p", null, "Học React từ cơ bản đến nâng cao")
+      );
+      //React-DOM --> render UI
+      //syntax  ReactDOM.render(element, container, callback);
+      const root2 = document.getElementById("root-2");
+      ReactDOM.render(divReact, root2);
+    </script>
+  </body>
+</html>

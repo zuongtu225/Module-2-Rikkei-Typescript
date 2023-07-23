@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>JSX</title>
+  </head>
+  <body>
+    <h4>
+      JSX là viết tắt của JavaScript XML, một cú pháp mở rộng cho phép lập trình
+      viên viết HTML trong React một cách dễ dàng
+    </h4>
+    <div id="item"></div>
+    <div id="root"></div>
+    <div id="root2"></div>
+
+    <script type="text/babel">
+      // Sử dụng JSX để tạo một phần tử <div> với thuộc tính 'class' và nội dung là một đoạn văn bản
+      const item = document.getElementById("item");
+      const jsxElement = (
+        <div>
+          <h1>This is a simple example with JSX</h1>
+          <h1>This is a simple example with JSX</h1>
+          <h1>This is a simple example with JSX</h1>
+          <h1>This is a simple example with JSX</h1>
+        </div>
+      );
+      ReactDOM.render(jsxElement, item);
+
+      // tạo function thành jsx
+
+      function PostNew() {
+        return (
+          <div>
+            <img
+              src="https://img.remediosdigitales.com/25f4a6/porsche_macan_s_prueba_21/840_560.jpg"
+              alt=""
+            />
+            <p>Thêm 2 dấu {"<  >"} cho function cần jsx</p>
+            <p>Đây là function đã được jsx</p>
+          </div>
+        );
+      }
+      const root2 = document.getElementById("root2");
+      ReactDOM.render(<PostNew />, root2);
+    </script>
+  </body>
+</html>

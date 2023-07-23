@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Props</title>
+    <style>
+      .wrapper {
+        display: flex;
+        gap: 10px;
+      }
+      .item {
+        border: 5px solid rgb(2, 160, 169);
+        padding: 0 0 10px 0;
+        display: inline-block;
+        width: 400px;
+      }
+      .item img {
+        width: 100%;
+      }
+      button {
+        margin-top: 20px;
+        margin-left: 20px;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        color: white;
+        background-color: #007e8b;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 
+        Props
+
+        - React elements
+           - Sử dụng props giống như với attribute của thẻ HTML
+           - 2 props class, for => className, htmlFor
+        - React components
+            - Sử dụng props giống như đối số cho Component 
+            - Tự do đặt tên props
+                - Đặt theo camelCase
+        - Chú ý: 
+                - Prop "key" là prop đặc biệt 
+                - Props có thể là bất ký dữ liệu gì 
+                - Sử dụng destructuring
+     -->
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      function notify() {
+        alert("1000 usd");
+      }
+      function PostItem(props) {
+        return (
+          <div class="item ">
+            <img src={props.img} alt="" />
+            <h1>{props.title}</h1>
+            <button onClick={notify}>Buy</button>
+            <button onClick={() => alert("Hết hàng")}>Pay</button>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div className="wrapper">
+            <PostItem
+              img="https://duhocthanhcong.vn/wp-content/uploads/school-photos/IMG%20Academy/IMG-Academy-Album1.jpg"
+              title="Đây là đối số truyền vào 1 "
+            />
+            <PostItem
+              img="https://image.congan.com.vn/thumbnail/CATP-480-2022-12-2/671ec24fda7cacf18dba03ee85f827d3.jpeg"
+              title="Đây là đối số truyền vào 2 "
+            />
+            <PostItem
+              img="https://pbs.twimg.com/media/CwXhmYzXUAAb7r2?format=jpg&name=4096x4096"
+              title="Đây là đối số truyền vào 3 "
+            />
+            <PostItem
+              img="https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Featured-Image.jpg"
+              title="Đây là đối số truyền vào 3 "
+            />
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
