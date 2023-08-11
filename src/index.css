@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
+}
+.logo img {
+  width: 100px;
+}
+p {
+  color: red;
+}
+
+.ulTop {
+  padding: 10px 5px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.ulTop img {
+  width: 100px;
+}
+.ulTop li {
+  list-style: none;
+}
+.country img {
+  width: 25px;
+  margin-right: 10px;
+}
+.slider {
+  width: 100%;
+  height: 650px;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+}
+
+.person-container {
+  background-color: #e8e3e3;
+  padding: 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.item {
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: bold;
+  text-align: center;
+  object-fit: cover;
+  color: rgb(12, 12, 12);
+}
+.item img {
+  width: 100%;
+}
+.wrapper-table {
+  padding: 5px;
+  background-color: #f1f1f1;
+}
+table {
+  background-color: #fff;
+  border-collapse: collapse;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+td,
+th {
+  padding: 20px;
+  border: 1px solid black;
+}
+#btnStatus,
+#btdDelete,
+#bdtEdit {
+  color: white;
+  padding: 10px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  margin: 5px;
+}
+#btnStatus {
+  background-color: rgb(0, 159, 203);
+}
+#btdDelete {
+  background-color: rgb(241, 1, 1);
+}
+#bdtEdit {
+  background-color: rgb(32, 174, 0);
+}
