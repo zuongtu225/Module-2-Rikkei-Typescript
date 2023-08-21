@@ -1,0 +1,40 @@
+img {
+  width: 300px;
+}
+.product {
+  padding: 0 50px;
+  margin: 10px 0;
+  border: 1px solid #06fff4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnDetail {
+  padding: 10px 20px;
+  border: 2px solid #06fff4;
+  color: #48d2cc;
+}
+.ulProduct {
+  padding-left: 620px;
+  display: flex;
+  gap: 20px;
+}
+.ulProduct .a {
+  padding: 5px 10px;
+  border: 2px solid #06aeff;
+  color: #06aeff;
+  font-size: 25px;
+  text-decoration: none;
+  margin: 10px;
+}
+.imgHome {
+  width: 100%;
+}
+.imgLaptop {
+  margin: 0 auto;
+  width: 70%;
+}
+.bookImg {
+  width: 60%;
+  margin: 0 auto;
+}
